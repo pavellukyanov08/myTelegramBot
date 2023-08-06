@@ -1,5 +1,4 @@
 import webbrowser
-
 import telebot
 from telebot import types
 
