@@ -1,36 +1,3 @@
-import requests
-
-
-def convert_currency(amount, from_currency, to_currency, api_key):
-    base_url = "https://www.googleapis.com/currencyconverter/v1/convert"
-
-    params = {
-        'key': api_key,
-        'q': f"{amount} {from_currency} to {to_currency}"
-    }
-
-    response = requests.get(base_url, params=params)
-    data = response.json()
-
-    if 'error' in data:
-        error_message = data['error']
-        print(f"Error: {error_message}")
-        return None
-
-    converted_amount = data['rhs'].split(' ')[0]
-    return float(converted_amount)
-
-
-# Замените 'YOUR_API_KEY' на ваш действующий API-ключ
-api_key = 'YOUR_API_KEY'
-amount = 100
-from_currency = 'USD'
-to_currency = 'EUR'
-
-converted_amount = convert_currency(amount, from_currency, to_currency, api_key)
-if converted_amount is not None:
-    print(f"{amount} {from_currency} is equal to {converted_amount} {to_currency}")
-
 # import telebot
 # from currency_converter import CurrencyConverter
 # from telebot import types
