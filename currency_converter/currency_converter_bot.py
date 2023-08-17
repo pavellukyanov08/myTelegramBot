@@ -1,8 +1,11 @@
 # import telebot
 # from currency_converter import CurrencyConverter
 # from telebot import types
+# from dotenv import load_dotenv
+# import os
 #
-# bot = telebot.TeleBot('6388807339:AAEJPpiQU9Dglc0ktsSBVFigksgcCIlWuh4')
+# load_dotenv()
+# bot = telebot.TeleBot(os.getenv('TOKEN'))
 #
 # currency = CurrencyConverter()
 # amount = 0

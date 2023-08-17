@@ -1,7 +1,11 @@
 import telebot
 import sqlite3 as sq
 
-bot = telebot.TeleBot('6388807339:AAEJPpiQU9Dglc0ktsSBVFigksgcCIlWuh4')
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 
 # В этом файле будет работа с базой данных для бота

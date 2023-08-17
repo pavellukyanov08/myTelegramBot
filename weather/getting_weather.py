@@ -1,8 +1,11 @@
 import requests
 import telebot
 import datetime
+from dotenv import load_dotenv
+import os
 
-bot = telebot.TeleBot('6388807339:AAEJPpiQU9Dglc0ktsSBVFigksgcCIlWuh4')
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 weather_api = 'b40831904944d1d993818578a2133983'
 url_base = 'https://api.openweathermap.org/data/2.5/'
 
